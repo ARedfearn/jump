@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: jump
+---
+testFramework: junit
+sourceLanguage: java
