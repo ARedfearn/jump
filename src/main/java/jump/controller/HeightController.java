@@ -9,6 +9,7 @@ import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.reactivex.Single;
+import jump.model.Planet;
 
 import javax.inject.Inject;
 
@@ -23,8 +24,8 @@ public class HeightController {
   }
 
   @Get(produces = MediaType.APPLICATION_JSON)
-  Single<MutableHttpResponse<String>> echoFlow(@Body Single<String> body) {
-    return body.map(HttpResponse::ok);
+  Single<MutableHttpResponse<String>> echoFlow(@Body Single<Planet> planetSingle) {
+    return planetSingle.map(planet -> HttpResponse.ok(planet.getPlanet()));
   }
 
 }
