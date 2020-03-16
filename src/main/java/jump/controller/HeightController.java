@@ -1,12 +1,14 @@
 package jump.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
+import io.micronaut.http.MutableHttpResponse;
+import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import jump.model.Height;
+import io.reactivex.Single;
 
 import javax.inject.Inject;
 
@@ -20,11 +22,9 @@ public class HeightController {
     this.objectMapper = objectMapper;
   }
 
-  @Get(produces = MediaType.TEXT_PLAIN)
-
-  public String index() throws JsonProcessingException {
-    Height height = new Height();
-    return objectMapper.writeValueAsString(height);
+  @Get(produces = MediaType.APPLICATION_JSON)
+  Single<MutableHttpResponse<String>> echoFlow(@Body Single<String> body) {
+    return body.map(HttpResponse::ok);
   }
 
 }
