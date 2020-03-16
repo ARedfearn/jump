@@ -1,12 +1,13 @@
 package jump.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Height {
 
+  @JsonProperty
   private double meters;
-  private String planet;
 
   public double getMeters() {
     return meters;
@@ -14,13 +15,5 @@ public class Height {
 
   public void setMeters(double meters) {
     this.meters = meters;
-  }
-
-  public String getPlanet() {
-    return planet;
-  }
-
-  public void setPlanet(String planet) {
-    this.planet = planet;
   }
 }
