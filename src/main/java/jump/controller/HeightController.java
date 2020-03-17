@@ -1,12 +1,10 @@
 package jump.controller;
 
-import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
-import io.micronaut.http.MutableHttpResponse;
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.reactivex.Single;
+import io.reactivex.Maybe;
 import jump.Service.JumpService;
 import jump.model.Height;
 import jump.model.Planet;
@@ -21,9 +19,9 @@ public class HeightController {
   }
 
   @Get(produces = MediaType.APPLICATION_JSON)
-  Single<MutableHttpResponse<Height>> echoFlow(@Body Single<Planet> planetSingle) {
-    return planetSingle
-      .flatMap(planet -> jumpService.getJumpHeight(planet))
-      .map(HttpResponse::ok);
+  Maybe<Height> getHeight(@Body Planet planet) {
+    return Maybe.just(planet)
+      .flatMap(p -> jumpService.getHeight(p))
+      .defaultIfEmpty(new Height());
   }
 }

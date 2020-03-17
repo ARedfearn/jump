@@ -1,11 +1,11 @@
 package jump.Service;
 
-import io.reactivex.Single;
+import io.reactivex.Maybe;
 import jump.model.Height;
 import jump.model.Planet;
 
 public interface JumpService {
 
-  Single<Height> getJumpHeight(Planet planet);
+  Maybe<Height> getHeight(Planet planet);
 
 }

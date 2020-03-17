@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+  <changeSet author="alexRedfearn" id="change-0.1">
+    <createTable tableName="JUMP_PLANET">
+      <column name="ID" type="BIGINT UNSIGNED" autoIncrement="true">
+        <constraints primaryKey="true" primaryKeyName="jump_planet_pk" />
+      </column>
+      <column name="NAME" type="VARCHAR(100)" />
+      <column name="GRAVITY" type="DECIMAL" />
+    </createTable>
+  </changeSet>
+
+</databaseChangeLog>
