@@ -1,16 +1,25 @@
 package jump.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Planet {
 
-  private String planet;
+  @Id
+  @GeneratedValue
+  private long id;
+
+  private String name;
   private double gravity;
 
-  public String getPlanet() {
-    return planet;
+  public String getName() {
+    return name;
   }
 
-  public Planet setPlanet(String planet) {
-    this.planet = planet;
+  public Planet setName(String planet) {
+    this.name = planet;
     return this;
   }
 
