@@ -1,5 +1,6 @@
 package jump.service;
 
+import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
 import jump.domain.Planet;
@@ -10,5 +11,7 @@ public interface JumpService {
   Maybe<Height> getHeight(Planet planet);
 
   Single<Planet> putPlanet(Planet planet);
+
+  Flowable<Planet> getAllPlanets();
 
 }
