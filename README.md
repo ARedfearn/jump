@@ -1,8 +1,8 @@
 # jump
 
-Solar-Jump is a small REST API built using Micronaut to return the height(Meters) you can jump on other planets.
+Solar-Jump is a small REST API built using Micronaut to return the height(Meters) you can jump (assuming you jump 0.5 meters on Earth) on other planets.
 
-The API uses an embedded H2 database which is created at runtime and destroyed once the application is sttoped.
+The API uses an embedded H2 database which is created at runtime and destroyed once the application is stopped.
 
 ## Request
 
@@ -21,6 +21,7 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
     {"id":1,"name":"jupiter","gravity":24.79}
 
 
+
 ## Request
 
 ### GET jump/height
@@ -36,3 +37,15 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
     connection: keep-alive
 
     {"meters":0.2}
+    
+
+## Planets
+
+    Planet	Gravity m/s²
+    Mercury	3.7
+    Jupiter	24.97
+    Mars	3.71
+    Saturn	10.44
+    Uranus	8.87
+    Neptune	11.15
+
