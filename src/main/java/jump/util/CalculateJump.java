@@ -1,7 +1,7 @@
-package jump.Util;
+package jump.util;
 
 import jump.model.Height;
-import jump.model.Planet;
+import jump.domain.Planet;
 
 import javax.inject.Singleton;
 

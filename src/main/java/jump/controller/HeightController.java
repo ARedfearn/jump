@@ -5,11 +5,11 @@ import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.reactivex.Maybe;
-import jump.Service.JumpService;
+import jump.service.JumpService;
 import jump.model.Height;
-import jump.model.Planet;
+import jump.domain.Planet;
 
-@Controller("/jump")
+@Controller()
 public class HeightController {
 
   private JumpService jumpService;
@@ -18,9 +18,9 @@ public class HeightController {
     this.jumpService = jumpService;
   }
 
-  @Get(produces = MediaType.APPLICATION_JSON)
-  Maybe<Height> getHeight(@Body Planet planet) {
-    return Maybe.just(planet)
+  @Get(value = "/jump", consumes = MediaType.APPLICATION_JSON)
+  Maybe<Height> getHeight(@Body Maybe<Planet> planet) {
+    return planet
       .flatMap(p -> jumpService.getHeight(p))
       .defaultIfEmpty(new Height());
   }
