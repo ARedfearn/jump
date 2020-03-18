@@ -2,10 +2,10 @@ package jump.service;
 
 import io.reactivex.Maybe;
 import io.reactivex.Single;
+import jump.domain.Planet;
+import jump.model.Height;
 import jump.repository.PlanetRepository;
 import jump.util.CalculateJump;
-import jump.model.Height;
-import jump.domain.Planet;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

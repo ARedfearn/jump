@@ -2,6 +2,7 @@ package jump.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,6 +15,8 @@ public class Planet {
   @GeneratedValue
   private Long id;
   private String name;
+
+  @Column(precision = 10, scale = 2)
   private double gravity;
 
   public String getName() {
