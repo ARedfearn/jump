@@ -1,5 +1,6 @@
 package jump.service;
 
+import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
 import jump.domain.Planet;
@@ -33,4 +34,11 @@ public class JumpServiceImp implements JumpService {
   public Single<Planet> putPlanet(Planet planet) {
     return planetRepository.save(planet);
   }
+
+  @Override
+  public Flowable<Planet> getAllPlanets() {
+    return planetRepository.findAll();
+  }
+
+
 }
