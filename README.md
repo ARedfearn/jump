@@ -21,10 +21,26 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
     {"id":1,"name":"jupiter","gravity":24.79}
 
 
+## Request
+
+### GET jump/planet
+
+    $ curl -i -X GET http://localhost:8080/planet
+    
+### Response
+
+    HTTP/1.1 200 OK
+    transfer-encoding: chunked
+    Date: Wed, 18 Mar 2020 16:04:56 GMT
+    transfer-encoding: chunked
+    content-type: application/json
+
+    [{"id":1,"name":"jupiter","gravity":24.79}]
+
 
 ## Request
 
-### GET jump/height
+### GET jump
 
     $ curl -i -H 'Content-Type:  application/json' -d '{"name" : "jupiter"}' -X GET  http://localhost:8080/planet
     
@@ -38,6 +54,7 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
 
     {"meters":0.2}
     
+
 
 ## Planets
 
