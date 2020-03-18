@@ -26,6 +26,7 @@ public class HeightController {
 
   @Put(value = "/planet")
   Single<Planet> putPlanet(@Body Planet planet) {
-    return Single.just(planet);
+    return Single.just(planet)
+      .flatMap(p -> jumpService.putPlanet(p));
   }
 }
