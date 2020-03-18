@@ -1,16 +1,18 @@
-package jump.model;
+package jump.domain;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Planet {
 
   @Id
   @GeneratedValue
-  private long id;
-
+  private Long id;
   private String name;
   private double gravity;
 
@@ -18,17 +20,23 @@ public class Planet {
     return name;
   }
 
-  public Planet setName(String planet) {
-    this.name = planet;
-    return this;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public double getGravity() {
     return gravity;
   }
 
-  public Planet setGravity(double gravity) {
+  public void setGravity(double gravity) {
     this.gravity = gravity;
-    return this;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 }

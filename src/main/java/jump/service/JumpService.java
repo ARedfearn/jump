@@ -1,8 +1,8 @@
-package jump.Service;
+package jump.service;
 
 import io.reactivex.Maybe;
 import jump.model.Height;
-import jump.model.Planet;
+import jump.domain.Planet;
 
 public interface JumpService {
 
