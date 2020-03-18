@@ -1,6 +1,7 @@
 package jump.service;
 
 import io.reactivex.Maybe;
+import io.reactivex.Single;
 import jump.repository.PlanetRepository;
 import jump.util.CalculateJump;
 import jump.model.Height;
@@ -26,5 +27,10 @@ public class JumpServiceImp implements JumpService {
     return planetRepository.findByName(planet.getName())
       .map(p -> calculateJump.calculate(p))
       .defaultIfEmpty(new Height());
+  }
+
+  @Override
+  public Single<Planet> putPlanet(Planet planet) {
+    return planetRepository.save(planet);
   }
 }
