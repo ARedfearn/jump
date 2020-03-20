@@ -2,6 +2,14 @@
 micronaut:
   application:
     name: jump-jdbc
+  server:
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedOrigins:
+            - http(|s):\/\/localhost(.*)
+
 jackson:
   bean-introspection-module: true
 
