@@ -6,7 +6,7 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
 
 ## Request
 
-### PUT jump/planet
+### PUT planet
 
     $ curl -i -H 'Content-Type:  application/json' -d '{"name" : "jupiter","gravity" : 24.79}' -X PUT  http://localhost:8080/planet
     
