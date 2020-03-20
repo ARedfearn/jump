@@ -23,7 +23,7 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
 
 ## Request
 
-### GET jump/planet
+### GET planet
 
     $ curl -i -X GET http://localhost:8080/planet
     
@@ -40,9 +40,9 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
 
 ## Request
 
-### GET jump
+### GET jump/planet
 
-    $ curl -i -H 'Content-Type:  application/json' -d '{"name" : "jupiter"}' -X GET  http://localhost:8080/planet
+    $ curl -i -X GET  http://localhost:8080/jump/jupiter
     
 ### Response
 
@@ -59,6 +59,8 @@ The API uses an embedded H2 database which is created at runtime and destroyed o
 ## Planets
 
     Planet	Gravity m/s²
+    Earth 9.81
+    Moon 3.03
     Mercury	3.7
     Jupiter	24.97
     Mars	3.71
