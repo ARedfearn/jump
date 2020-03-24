@@ -3,6 +3,7 @@ micronaut:
   application:
     name: jump-jdbc
   server:
+    port: 8086
     cors:
       enabled: true
       configurations:
