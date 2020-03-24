@@ -1,6 +1,5 @@
 package jump.controller;
 
-import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.reactivex.Maybe;
