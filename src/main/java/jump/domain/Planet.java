@@ -2,11 +2,16 @@ package jump.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import io.micronaut.core.annotation.Introspected;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
+@Introspected
 @Entity
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Planet {
@@ -14,8 +19,11 @@ public class Planet {
   @Id
   @GeneratedValue
   private Long id;
+
+  @NotBlank(message = "Name is required")
   private String name;
 
+  @NotNull(message = "Gravity is required")
   @Column(precision = 10, scale = 2)
   private double gravity;
 
